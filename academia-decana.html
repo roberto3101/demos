@@ -1,317 +1,459 @@
 <!doctype html>
-<html lang="es">
+<html lang="es-PE">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="robots" content="noindex">
-<meta name="description" content="Academia Decana · Academia · Centro educativo en Los Olivos. Demo de página web.">
-<meta name="theme-color" content="#020306">
+<meta name="description" content="Academia Decana: academia · centro educativo en Los Olivos. Horario, ubicación y contacto por WhatsApp.">
+<meta name="theme-color" content="#f6f7fa">
+<meta name="color-scheme" content="light">
+<link rel="icon" href="data:image/svg+xml,%3Csvg%20xmlns%3D%22http%3A//www.w3.org/2000/svg%22%20viewBox%3D%220%200%2032%2032%22%3E%3Crect%20width%3D%2232%22%20height%3D%2232%22%20rx%3D%228%22%20fill%3D%22%231f4fd1%22/%3E%3Ctext%20x%3D%2216%22%20y%3D%2222%22%20font-family%3D%22Arial%22%20font-weight%3D%22700%22%20font-size%3D%2217%22%20fill%3D%22%23fff%22%20text-anchor%3D%22middle%22%3EA%3C/text%3E%3C/svg%3E">
 <title>Academia Decana · Academia · Centro educativo en Los Olivos</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://images.pexels.com">
+<link rel="preload" as="image" href="https://images.pexels.com/photos/16420457/pexels-photo-16420457.jpeg?auto=compress&cs=tinysrgb&w=1200" imagesrcset="https://images.pexels.com/photos/16420457/pexels-photo-16420457.jpeg?auto=compress&cs=tinysrgb&w=480 480w, https://images.pexels.com/photos/16420457/pexels-photo-16420457.jpeg?auto=compress&cs=tinysrgb&w=800 800w, https://images.pexels.com/photos/16420457/pexels-photo-16420457.jpeg?auto=compress&cs=tinysrgb&w=1200 1200w, https://images.pexels.com/photos/16420457/pexels-photo-16420457.jpeg?auto=compress&cs=tinysrgb&w=1600 1600w" imagesizes="(min-width: 900px) 46vw, 100vw">
+<link href="https://fonts.googleapis.com/css2?family=Onest:wght@400;500;600;700&family=Unbounded:wght@500;600;700&display=swap" rel="stylesheet">
 <style>
-:root{
-  --c:#1f5fbf;--c-dark:#0b2244;--c-deep:#020306;--c-soft:#c6d8f3;--rgb:31,95,191;
-  --bg:#fbfaf8;--surface:#ffffff;--ink:#16181d;--muted:#5c6472;--line:#e7e4de;
-  --radius:20px;--shadow:0 1px 2px rgba(20,22,28,.05),0 12px 32px -12px rgba(20,22,28,.14);
-  --font:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
-  --display:"Fraunces",Georgia,serif;
-}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-padding-top:84px}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 16px/1.6 var(--body);-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;overflow-x:clip}
+img{display:block;max-width:100%;height:auto}
 a{color:inherit}
-img,svg{display:block}
-.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
+h1,h2,h3{margin:0;text-wrap:balance}
+p{margin:0;text-wrap:pretty}
+ul,ol{margin:0;padding:0;list-style:none}
+figure{margin:0}
+.wrap{width:min(1200px,100% - 32px);margin-inline:auto}
+@media(min-width:768px){.wrap{width:min(1200px,100% - 64px)}}
+.ic{width:1.25em;height:1.25em;flex:none}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+.skip{position:absolute;left:12px;top:-60px;z-index:100;background:var(--ink);color:#fff;padding:10px 14px;border-radius:10px;text-decoration:none}
+.skip:focus{top:12px}
+:focus-visible{outline:2px solid var(--focus);outline-offset:3px}
 
-/* banner demo */
-.demo-bar{background:#14161b;color:#f1efe9;font-size:12.5px;line-height:1.35;text-align:center;padding:8px 14px;letter-spacing:.01em}
-.demo-bar b{font-weight:700;color:#fff}
-.demo-bar span{opacity:.72}
+/* honesty banner */
+.demo-bar{background:var(--bar-bg,#161a22);color:var(--bar-fg,#e8eaee);font-size:12.5px;line-height:1.45;padding:7px 16px;text-align:center}
+.demo-bar p{max-width:72ch;margin-inline:auto}
+.demo-bar a{color:inherit;text-underline-offset:2px;text-decoration-color:rgba(255,255,255,.4)}
+.demo-tag{display:inline-block;margin-right:6px;padding:1px 8px;border:1px solid rgba(255,255,255,.28);border-radius:999px;font-weight:600;font-size:11.5px;letter-spacing:.01em}
 
 /* nav */
-.nav{position:sticky;top:0;z-index:30;background:rgba(251,250,248,.86);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--line)}
-.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
-.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;min-width:0}
-.brand i{flex:none;width:36px;height:36px;border-radius:11px;background:var(--c);color:#fff;display:grid;place-items:center;font:700 18px var(--display);font-style:normal}
-.brand span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:46vw;font-size:15px}
-.nav ul{display:none;list-style:none;margin:0;padding:0;gap:26px;font-size:14.5px;font-weight:500;color:var(--muted)}
-.nav ul a{text-decoration:none}.nav ul a:hover{color:var(--ink)}
-.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:0;cursor:pointer;text-decoration:none;font:600 15px var(--font);padding:13px 22px;border-radius:999px;background:var(--c);color:#fff;transition:transform .18s ease,box-shadow .18s ease,background .18s ease;box-shadow:0 8px 20px -8px rgba(var(--rgb),.7)}
-.btn:hover{transform:translateY(-2px);background:var(--c-dark)}
-.btn:focus-visible,.chip:focus-visible,.fab:focus-visible,.chat-toggle:focus-visible{outline:3px solid var(--c-soft);outline-offset:2px}
-.btn.ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.4)}
-.btn.ghost:hover{background:rgba(255,255,255,.12)}
-.btn.sm{padding:10px 18px;font-size:14px}
-.btn svg{width:18px;height:18px}
-@media(min-width:820px){.nav ul{display:flex}}
+.nav{position:sticky;top:0;z-index:30;background:var(--nav-bg);backdrop-filter:saturate(1.3) blur(14px);-webkit-backdrop-filter:saturate(1.3) blur(14px);border-bottom:1px solid var(--nav-line)}
+.nav-in{display:flex;align-items:center;gap:16px;height:64px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;min-width:0;margin-right:auto}
+.brand>span:last-child{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;font-size:15px;letter-spacing:-.01em}
+.nav ul{display:none;gap:28px;font-size:14.5px;font-weight:500}
+.nav ul a{text-decoration:none;color:var(--muted);transition:color .2s}
+.nav ul a:hover{color:var(--ink)}
+.nav-cta .lg{display:none}
+@media(max-width:479px){.nav-cta{width:44px;min-height:44px;padding:0}.nav-cta .sm{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}.nav-cta .ic{width:22px;height:22px}}
+@media(min-width:1000px){.nav ul{display:flex}.nav-cta .lg{display:inline}.nav-cta .sm{display:none}}
 
-/* hero */
-.hero{position:relative;overflow:hidden;background:var(--c-deep);color:#fff;isolation:isolate}
-.hero::before{content:"";position:absolute;inset:-20% -10% auto auto;width:70vw;height:70vw;max-width:760px;max-height:760px;border-radius:50%;background:radial-gradient(closest-side,rgba(var(--rgb),.55),transparent 70%);z-index:-1}
-.hero::after{content:"";position:absolute;inset:auto auto -30% -15%;width:55vw;height:55vw;max-width:560px;max-height:560px;border-radius:50%;background:radial-gradient(closest-side,rgba(255,255,255,.07),transparent 70%);z-index:-1}
-.hero .wrap{display:grid;gap:36px;padding:56px 0 64px;align-items:center}
-.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.78)}
-.eyebrow::before{content:"";width:22px;height:2px;background:currentColor;opacity:.6}
-.hero h1{font:700 clamp(34px,7.4vw,64px)/1.04 var(--display);letter-spacing:-.025em;margin:16px 0 18px;text-wrap:balance}
-.hero p.lead{font-size:clamp(16px,2.4vw,19px);color:rgba(255,255,255,.82);max-width:34ch;margin:0 0 28px}
-.cta{display:flex;flex-wrap:wrap;gap:12px}
-.badge{display:inline-flex;align-items:center;gap:6px;margin-top:26px;padding:9px 16px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);font-weight:600;font-size:14px;backdrop-filter:blur(6px)}
-.card-hero{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:24px;padding:26px;backdrop-filter:blur(10px)}
-.card-hero dl{margin:0;display:grid;gap:18px}
-.card-hero dt{font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.62);font-weight:600;margin-bottom:4px}
-.card-hero dd{margin:0;font-size:15px;color:#fff;line-height:1.5}
-@media(min-width:900px){.hero .wrap{grid-template-columns:1.25fr .75fr;gap:64px;padding:88px 0 96px}}
+/* buttons */
+.btn{--b:var(--accent);display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:52px;padding:0 24px;border-radius:999px;border:0;background:var(--b);color:#fff;font:600 16px/1 var(--body);text-decoration:none;white-space:nowrap;cursor:pointer;transition:transform .25s cubic-bezier(.2,.7,.2,1),background-color .2s,box-shadow .25s}
+.btn:hover{background:var(--accent-d,var(--b));transform:translateY(-2px)}
+.btn:active{transform:translateY(0) scale(.98)}
+.btn .ic{width:20px;height:20px}
+.btn-sm{min-height:42px;padding:0 16px;font-size:14.5px;gap:8px}
+.btn-sm .ic{width:18px;height:18px}
+.link{display:inline-flex;align-items:center;gap:6px;font-weight:600;text-decoration:underline;text-decoration-thickness:1.5px;text-underline-offset:5px;text-decoration-color:color-mix(in srgb,currentColor 35%,transparent);transition:text-decoration-color .2s}
+.link:hover{text-decoration-color:currentColor}
+.ctas{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px}
 
-/* secciones */
-section{padding:72px 0}
-.kicker{font-size:13px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--c-dark);margin:0 0 10px}
-h2{font:700 clamp(28px,5vw,42px)/1.1 var(--display);letter-spacing:-.02em;margin:0 0 14px;text-wrap:balance}
-.sub{color:var(--muted);max-width:56ch;margin:0 0 36px;font-size:17px}
-.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
-.svc{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);transition:transform .2s ease,border-color .2s ease}
-.svc:hover{transform:translateY(-4px);border-color:rgba(var(--rgb),.45)}
-.ico{display:grid;place-items:center;width:48px;height:48px;border-radius:14px;background:var(--c-soft);color:var(--c-dark);margin-bottom:18px}
-.ico svg{width:24px;height:24px}
-.svc h3{font-size:17px;line-height:1.35;margin:0;font-weight:700}
+/* stars */
+.stars{position:relative;display:inline-flex;vertical-align:middle}
+.stars svg{width:22px;height:22px;flex:none;fill:currentColor}
+.s-bg,.s-fg{display:flex;gap:2px}
+.s-bg{color:var(--star-off,#d9dde3)}
+.s-fg{position:absolute;inset:0 auto 0 0;overflow:hidden;color:#f0a81a}
 
-.steps{display:grid;gap:16px;counter-reset:s;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
-.step{position:relative;padding:26px 26px 26px 26px;border-radius:var(--radius);background:var(--c-soft);color:var(--c-deep)}
-.step::before{counter-increment:s;content:counter(s);font:700 34px var(--display);color:var(--c-dark);opacity:.9;display:block;margin-bottom:6px}
-.step h3{margin:0 0 4px;font-size:17px}.step p{margin:0;font-size:15px;opacity:.85}
+/* live status */
+.dot{width:9px;height:9px;border-radius:50%;background:#9aa3ad;flex:none}
+[data-status]{display:inline-flex;align-items:center;gap:9px}
+[data-status].is-open .dot{background:#1fa463;box-shadow:0 0 0 4px rgba(31,164,99,.18)}
+[data-status].is-closed .dot{background:#d98a12;box-shadow:0 0 0 4px rgba(217,138,18,.18)}
+.hours{margin:0;display:grid}
+.hrow{display:flex;justify-content:space-between;gap:16px;padding:9px 12px;border-radius:10px}
+.hrow dt{font-weight:500}.hrow dd{margin:0;font-variant-numeric:tabular-nums;text-align:right}
+.hrow.today{background:var(--today-bg);font-weight:600}
+.hrow.today dt::after{content:"Hoy";margin-left:8px;font-size:11.5px;font-weight:700;padding:2px 8px;border-radius:999px;background:var(--today-tag);color:#fff;vertical-align:1px}
 
-.info{display:grid;gap:20px}
-@media(min-width:900px){.info{grid-template-columns:.8fr 1.2fr;align-items:stretch}}
-.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
-.panel h3{margin:0 0 6px;font-size:13px;letter-spacing:.09em;text-transform:uppercase;color:var(--c-dark)}
-.panel p{margin:0 0 22px;font-size:16px}.panel p:last-of-type{margin-bottom:24px}
-.map{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);min-height:340px;background:#e9e7e2}
-.map iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
+/* faq */
+.qa{border-bottom:1px solid var(--line)}
+.qa summary{display:flex;align-items:center;justify-content:space-between;gap:20px;padding:22px 0;cursor:pointer;list-style:none;font-weight:600;font-size:1.06rem}
+.qa summary::-webkit-details-marker{display:none}
+.qa-ic{width:22px;height:22px;transition:transform .3s cubic-bezier(.2,.7,.2,1);color:var(--muted)}
+.qa[open] .qa-ic{transform:rotate(45deg)}
+.qa-a{padding:0 40px 22px 0;color:var(--muted);max-width:62ch}
+.qa-a a{color:var(--ink);font-weight:600}
+.map{position:relative;width:100%;overflow:hidden;background:var(--line);min-height:320px}
+.map iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
 
-.band{background:var(--c-deep);color:#fff;border-radius:28px;padding:44px 28px;text-align:center}
-.band h2{color:#fff;margin-inline:auto;max-width:20ch}
-.band p{color:rgba(255,255,255,.78);margin:0 auto 26px;max-width:46ch}
-.band .btn{background:#fff;color:var(--c-deep);box-shadow:none}
-.band .btn:hover{background:var(--c-soft)}
+/* footer */
+.foot{padding:48px 0 150px;font-size:14px;color:var(--muted);border-top:1px solid var(--line)}
+.foot-in{display:grid;gap:24px}
+@media(min-width:800px){.foot-in{grid-template-columns:1fr 1fr;align-items:end}.foot-legal{text-align:right}}
+.foot p+p{margin-top:4px}
+.foot-name{color:var(--ink);font-weight:700;font-size:15px}
+.foot a{text-underline-offset:3px}
+.credit{margin-top:10px!important;color:var(--ink)}
+.credit a{font-weight:600}
 
-footer{padding:36px 0 120px;color:var(--muted);font-size:13.5px;border-top:1px solid var(--line)}
-footer .wrap{display:grid;gap:8px}
+/* floating dock */
+.dock{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:40;display:flex;flex-direction:column;align-items:flex-end;gap:12px}
+.wa-fab{width:58px;height:58px;border-radius:50%;display:grid;place-items:center;background:#25d366;color:#fff;box-shadow:0 10px 24px -8px rgba(18,140,70,.6),0 2px 6px rgba(0,0,0,.12);transition:transform .25s cubic-bezier(.2,.7,.2,1)}
+.wa-fab:hover{transform:scale(1.06)}
+.wa-fab .ic{width:30px;height:30px}
+.chat-launch{display:inline-flex;align-items:center;gap:8px;height:46px;padding:0 13px;border:0;border-radius:999px;background:var(--ink);color:#fff;font:600 14px/1 var(--body);cursor:pointer;box-shadow:0 10px 24px -10px rgba(0,0,0,.45);transition:transform .25s cubic-bezier(.2,.7,.2,1)}
+.chat-launch[hidden]{display:none}
+.chat-launch span{display:none}
+.chat-launch .ic{width:22px;height:22px}
+.chat-launch:hover{transform:translateY(-2px)}
+@media(min-width:700px){.chat-launch{padding:0 18px 0 14px}.chat-launch span{display:inline}}
 
-/* botones flotantes */
-.fab{position:fixed;right:18px;bottom:18px;z-index:40;width:60px;height:60px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;box-shadow:0 12px 28px -6px rgba(37,211,102,.65);transition:transform .18s ease;text-decoration:none}
-.fab:hover{transform:scale(1.07)}.fab svg{width:32px;height:32px}
-.chat-toggle{position:fixed;left:18px;bottom:18px;z-index:40;display:flex;align-items:center;gap:10px;border:0;cursor:pointer;background:#14161b;color:#fff;font:600 14px var(--font);padding:14px 20px;border-radius:999px;box-shadow:0 12px 28px -8px rgba(0,0,0,.5)}
-.chat-toggle .dot{width:9px;height:9px;border-radius:50%;background:#4ade80;box-shadow:0 0 0 4px rgba(74,222,128,.25)}
+/* chat panel */
+.chat{position:fixed;right:16px;bottom:calc(16px + env(safe-area-inset-bottom));z-index:60;width:min(380px,100vw - 32px);height:min(580px,100dvh - 32px);display:flex;flex-direction:column;background:#fff;color:#1a1d24;border-radius:22px;overflow:hidden;box-shadow:0 30px 70px -20px rgba(10,14,22,.45),0 0 0 1px rgba(10,14,22,.06);transform-origin:100% 100%;opacity:0;visibility:hidden;transform:translateY(12px) scale(.97);transition:opacity .22s ease,transform .3s cubic-bezier(.2,.7,.2,1),visibility 0s linear .3s}
+.chat.open{opacity:1;visibility:visible;transform:none;transition:opacity .22s ease,transform .3s cubic-bezier(.2,.7,.2,1),visibility 0s}
+.chat[hidden]{display:none}
+@media(max-width:560px){.chat{left:8px;right:8px;bottom:8px;width:auto;height:min(82dvh,640px);border-radius:20px}}
+.chat-head{display:flex;align-items:center;gap:12px;padding:14px 14px 14px 16px;background:var(--chat-head);color:#fff}
+.chat-av{flex:none;width:38px;height:38px;border-radius:12px;display:grid;place-items:center;background:rgba(255,255,255,.16);font-weight:700;font-size:16px}
+.chat-id{flex:1;min-width:0}
+.chat-id h2{font:600 15px/1.25 var(--body);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chat-id p{font-size:12px;opacity:.78;display:flex;align-items:center;gap:6px}
+.chat-on{width:7px;height:7px;border-radius:50%;background:#4ade80}
+.chat-x{display:grid;place-items:center;width:36px;height:36px;border:0;border-radius:10px;background:transparent;color:#fff;cursor:pointer}
+.chat-x:hover{background:rgba(255,255,255,.14)}
+.chat-log{flex:1;overflow-y:auto;overscroll-behavior:contain;padding:18px 14px;display:flex;flex-direction:column;gap:8px;background:#f5f6f8}
+.msg{max-width:85%;padding:10px 14px;border-radius:18px;font-size:14.5px;line-height:1.5;overflow-wrap:anywhere;animation:msgIn .28s cubic-bezier(.2,.7,.2,1) both}
+.msg.bot{align-self:flex-start;background:#fff;border-bottom-left-radius:6px;box-shadow:0 1px 2px rgba(16,24,40,.06)}
+.msg.me{align-self:flex-end;background:var(--chat-me);color:#fff;border-bottom-right-radius:6px}
+.msg a{color:var(--chat-link);font-weight:600}
+.typing{display:flex;gap:4px;padding:14px 16px}
+.typing i{width:7px;height:7px;border-radius:50%;background:#9aa1ad;animation:blink 1.1s infinite ease-in-out}
+.typing i:nth-child(2){animation-delay:.15s}.typing i:nth-child(3){animation-delay:.3s}
+@keyframes blink{0%,60%,100%{opacity:.35;transform:translateY(0)}30%{opacity:1;transform:translateY(-3px)}}
+@keyframes msgIn{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+.chat-chips{display:flex;gap:8px;padding:10px 14px;overflow-x:auto;scrollbar-width:none;background:#fff;border-top:1px solid #eceef2}
+.chat-chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:1px solid #dfe2e8;background:#fff;color:#1a1d24;font:600 13px/1 var(--body);padding:9px 13px;border-radius:999px;cursor:pointer;transition:background-color .15s,border-color .15s}
+.chip:hover{background:var(--chip-hover);border-color:var(--chat-me)}
+.chat-form{display:flex;gap:8px;padding:4px 12px 10px;background:#fff}
+.chat-form input{flex:1;min-width:0;height:44px;border:1px solid #d6dae1;border-radius:999px;padding:0 16px;font:15px var(--body);color:#1a1d24;background:#fafbfc}
+.chat-form input::placeholder{color:#6b7280}
+.chat-form input:focus{outline:2px solid var(--chat-me);outline-offset:0;border-color:transparent}
+.chat-form button{flex:none;width:44px;height:44px;border:0;border-radius:50%;display:grid;place-items:center;background:var(--chat-me);color:#fff;cursor:pointer}
+.chat-note{padding:0 14px 12px;background:#fff;font-size:11.5px;color:#5f6673;text-align:center}
 
-/* chat demo */
-.chat{position:fixed;left:18px;bottom:82px;z-index:50;width:min(370px,calc(100vw - 36px));max-height:min(540px,calc(100vh - 140px));display:none;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:22px;box-shadow:0 24px 60px -16px rgba(10,12,18,.4);overflow:hidden}
-.chat.open{display:flex}
-.chat-head{display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--c-deep);color:#fff}
-.chat-head i{flex:none;width:36px;height:36px;border-radius:50%;background:var(--c);display:grid;place-items:center;font:700 16px var(--display);font-style:normal}
-.chat-head div{flex:1;min-width:0;line-height:1.25}.chat-head b{display:block;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
-.chat-head small{opacity:.7;font-size:12px}
-.chat-x{border:0;background:transparent;color:#fff;font-size:22px;line-height:1;cursor:pointer;padding:4px 8px;border-radius:8px}
-.chat-body{flex:1;overflow:auto;padding:16px;display:flex;flex-direction:column;gap:10px;background:#f6f4f0}
-.msg{max-width:86%;padding:10px 14px;border-radius:16px;font-size:14.5px;line-height:1.5;word-wrap:break-word}
-.msg.bot{background:#fff;border:1px solid var(--line);border-bottom-left-radius:4px;align-self:flex-start}
-.msg.me{background:var(--c);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
-.msg a{color:var(--c-dark);font-weight:600}
-.chips{display:flex;flex-wrap:wrap;gap:8px;padding:10px 14px 4px;background:#fff;border-top:1px solid var(--line)}
-.chip{border:1px solid var(--line);background:#fff;color:var(--ink);font:600 13px var(--font);padding:7px 13px;border-radius:999px;cursor:pointer;transition:background .15s,border-color .15s}
-.chip:hover{background:var(--c-soft);border-color:var(--c)}
-.chat-form{display:flex;gap:8px;padding:10px 14px 14px;background:#fff}
-.chat-form input{flex:1;min-width:0;border:1px solid var(--line);border-radius:999px;padding:11px 16px;font:15px var(--font);background:#fbfaf8;color:var(--ink)}
-.chat-form input:focus{outline:2px solid var(--c);border-color:transparent}
-.chat-form button{border:0;border-radius:999px;background:var(--c);color:#fff;font:600 14px var(--font);padding:0 18px;cursor:pointer}
-.note{font-size:11.5px;color:var(--muted);text-align:center;padding:0 14px 10px;background:#fff}
+/* motion: pure CSS, content is visible without JS */
+@media (prefers-reduced-motion:no-preference){
+  .ld{animation:ld .85s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i,0) * 90ms)}
+  @supports (animation-timeline:view()){
+    .rv{animation:rv linear both;animation-timeline:view();animation-range:entry 0% cover 30%}
+  }
+}
+@keyframes ld{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
+@keyframes rv{from{opacity:.001;transform:translateY(32px)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
-.reveal.in{opacity:1;transform:none}
-@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.btn,.svc,.fab{transition:none}}
-@media(max-width:520px){section{padding:56px 0}.chat-toggle span.t{display:none}.chat-toggle{padding:16px}}
-</style>
+:root{--bg:#f6f7fa;--surface:#fff;--ink:#151935;--muted:#50577a;--line:#e0e3ec;--mark:#ffe14d;
+--display:"Unbounded",ui-sans-serif,system-ui,sans-serif;--body:"Onest",ui-sans-serif,system-ui,sans-serif;
+--nav-bg:rgba(246,247,250,.86);--nav-line:rgba(21,25,53,.08);--bar-bg:#151935;
+--chat-head:#151935;--chat-me:var(--accent);--chat-link:var(--accent);--chip-hover:var(--tint);
+--today-bg:var(--tint);--today-tag:var(--accent);--star-off:#d6d9e3}
+h1,h2,h3{font-family:var(--display);font-weight:600;letter-spacing:-.025em}
+h2{font-size:clamp(1.75rem,3.6vw,2.7rem);line-height:1.1}
+.sub{color:var(--muted);font-size:1.06rem;margin-top:14px;max-width:48ch}
+.mark-a{display:grid;place-items:center;min-width:38px;height:38px;padding:0 6px;border-radius:10px;background:var(--accent);color:#fff;font:700 14px/1 var(--display);letter-spacing:-.02em}
+.btn-line{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn-line:hover{background:var(--ink);color:#fff}
+.btn-light{background:#fff;color:var(--accent)}
+.btn-light:hover{background:var(--mark);color:var(--ink)}
+
+.a-hero{position:relative;padding:28px 0 64px;isolation:isolate}
+.a-hero::before{content:"";position:absolute;inset:0;z-index:-1;background-image:linear-gradient(rgba(var(--acc-rgb),.09) 1px,transparent 1px),linear-gradient(90deg,rgba(var(--acc-rgb),.09) 1px,transparent 1px);background-size:26px 26px;background-position:-1px -1px;-webkit-mask-image:linear-gradient(180deg,#000 40%,transparent 96%);mask-image:linear-gradient(180deg,#000 40%,transparent 96%)}
+.hero-in{display:grid;gap:36px}
+.kick{font-weight:600;color:var(--accent);font-size:.98rem}
+.a-hero h1{font-size:clamp(2rem,4.1vw,3.35rem);line-height:1.12;margin:16px 0 20px;max-width:16ch}
+.a-hero mark{color:inherit;background:linear-gradient(transparent 56%,var(--mark) 56%,var(--mark) 90%,transparent 90%) no-repeat 0 0/100% 100%;padding:0 .06em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
+@media (prefers-reduced-motion:no-preference){.a-hero mark{animation:swipe .9s cubic-bezier(.65,0,.35,1) .65s both}}
+@keyframes swipe{from{background-size:0% 100%}to{background-size:100% 100%}}
+.lead{font-size:clamp(1.05rem,1.5vw,1.18rem);color:var(--muted);max-width:40ch;margin-bottom:30px}
+.hero-vis{position:relative;padding-bottom:64px}
+.hero-photo{border-radius:20px;overflow:hidden;aspect-ratio:5/4;box-shadow:0 30px 60px -36px rgba(21,25,53,.5)}
+.hero-photo img{width:100%;height:100%;object-fit:cover}
+.index-card{position:absolute;left:14px;right:28px;bottom:0;padding:16px 18px 16px 30px;border-radius:6px;z-index:2;background:linear-gradient(90deg,transparent 18px,rgba(225,60,60,.5) 18px,rgba(225,60,60,.5) 19.5px,transparent 19.5px),repeating-linear-gradient(180deg,transparent 0 25px,rgba(var(--acc-rgb),.16) 25px 26px),#fff;box-shadow:0 18px 36px -18px rgba(21,25,53,.45);rotate:-1.6deg}
+.ic-h{font:600 .78rem/1.3 var(--display);color:var(--accent);letter-spacing:.01em}
+.ic-v{font-weight:600;font-size:1.02rem;margin:4px 0 6px}
+.index-card .status{font-size:.92rem;font-weight:500}
+@media(min-width:900px){
+  .a-hero{padding:48px 0 96px}
+  .hero-in{grid-template-columns:1fr 1fr;align-items:center;gap:56px}
+  .index-card{left:-40px;right:auto;bottom:16px;min-width:300px}
+  .hero-vis{padding-bottom:0}
+}
+
+.a-svc{padding:72px 0}
+.rows{margin-top:36px;border-top:2px solid var(--ink)}
+.rows a{display:grid;grid-template-columns:auto 1fr auto;gap:16px;align-items:center;padding:22px 4px;border-bottom:1px solid var(--line);text-decoration:none;background:linear-gradient(90deg,rgba(255,225,77,.45),rgba(255,225,77,.45)) no-repeat 0 0/0% 100%;transition:background-size .45s cubic-bezier(.65,0,.35,1)}
+.rows a:hover{background-size:100% 100%}
+.row-ic{display:grid;place-items:center;width:48px;height:48px;border-radius:12px;background:var(--tint);color:var(--accent)}
+.row-ic .ic{width:24px;height:24px}
+.row-t h3{font-size:clamp(1.02rem,2vw,1.4rem);line-height:1.25}
+.row-t p{color:var(--muted);margin-top:4px;font-size:.98rem}
+.row-go{width:26px;height:26px;color:var(--accent);transition:transform .3s cubic-bezier(.2,.7,.2,1)}
+.rows a:hover .row-go{transform:translate(3px,-3px)}
+@media(min-width:900px){.rows a{padding:28px 12px;gap:28px}.row-t{display:grid;grid-template-columns:minmax(260px,1fr) 1fr;gap:28px;align-items:center}.row-t p{margin:0}}
+
+.a-steps{padding:88px 0;background:var(--ink);color:#eef0f8}
+.a-steps h2{color:#fff}
+.ruler{display:grid;gap:30px;margin-top:44px}
+.ruler li{position:relative;padding-left:66px}
+.ruler .n{position:absolute;left:0;top:-4px;font:700 2.6rem/1 var(--display);color:transparent;-webkit-text-stroke:1.5px var(--mark)}
+.ruler h3{font-size:1.12rem;color:#fff}
+.ruler p{color:rgba(238,240,248,.72);margin-top:8px;max-width:32ch}
+@media(min-width:900px){
+  .ruler{grid-template-columns:repeat(4,1fr);gap:32px;border-top:1px solid rgba(255,255,255,.18);padding-top:36px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.28) 0 1px,transparent 1px 24px) top left/100% 10px no-repeat}
+  .ruler li{padding:58px 0 0}
+  .ruler .n{top:0}
+}
+
+.a-proof{padding:88px 0 0}
+.a-proof .proof-in{display:grid;gap:32px;align-items:center}
+.a-proof figure{border-radius:20px;overflow:hidden;aspect-ratio:4/3}
+.a-proof figure img{width:100%;height:100%;object-fit:cover}
+.a-proof .big{font:700 clamp(4.5rem,11vw,7.5rem)/.9 var(--display);letter-spacing:-.05em;color:var(--accent);margin-bottom:12px}
+.a-proof .proof-txt>p:not(.big){margin:12px 0 24px;font-size:1.08rem;max-width:36ch}
+@media(min-width:900px){.a-proof .proof-in{grid-template-columns:1.1fr .9fr;gap:72px}}
+
+.a-loc{padding:88px 0}
+.loc-in{display:grid;gap:20px}
+.loc-card{background:var(--surface);border:1px solid var(--line);border-radius:20px;padding:28px 20px}
+.loc-card h2{margin-bottom:14px}
+.loc-card .hours{margin:18px -12px 20px}
+.addr{display:flex;gap:10px;align-items:flex-start;font-weight:500;margin-bottom:22px}
+.addr .ic{margin-top:3px;color:var(--accent)}
+.fine{font-size:13px;color:var(--muted);margin-top:16px}
+.a-loc .map{border-radius:20px;aspect-ratio:4/3.6}
+@media(min-width:900px){.loc-in{grid-template-columns:.85fr 1.15fr;gap:24px}.loc-card{padding:40px}.a-loc .map{aspect-ratio:auto}}
+
+.a-faq{padding:8px 0 96px}
+.a-faq .faq{margin-top:28px;max-width:860px}
+
+.a-final{padding:0 0 96px}
+.a-final .final-in{display:grid;border-radius:24px;overflow:hidden;background:var(--accent);color:#fff}
+.a-final .final-copy{padding:32px 22px}
+.a-final h2{color:#fff;font-size:clamp(1.6rem,3.4vw,2.5rem);max-width:18ch}
+.a-final p{margin:14px 0 26px;opacity:.88;font-size:1.06rem}
+.a-final figure{min-height:240px}
+.a-final figure img{width:100%;height:100%;object-fit:cover}
+@media(min-width:900px){.a-final .final-in{grid-template-columns:1.1fr .9fr}.a-final .final-copy{padding:56px;align-self:center}}
+:root{--accent:#1f4fd1;--accent-d:#173b9c;--tint:#e9edfa;--acc-rgb:31,79,209;--focus:#1f4fd1}</style>
 </head>
 <body>
-
-<div class="demo-bar" role="note"><b>Demo no oficial</b> preparada para Academia Decana por José Larosa <span>· desarrollador en Lima</span></div>
-
+<a class="skip" href="#main">Saltar al contenido</a>
+<div class="demo-bar" role="note"><p><span class="demo-tag">Demo no oficial</span> preparada para Academia Decana por <a href="https://portafolio-v2-hazel.vercel.app/" target="_blank" rel="noopener">José Larosa</a> · desarrollador en Lima</p></div>
 <header class="nav">
-  <div class="wrap">
-    <a class="brand" href="#top"><i>A</i><span>Academia Decana</span></a>
-    <ul>
-      <li><a href="#servicios">Servicios</a></li>
-      <li><a href="#visitanos">Horario y ubicación</a></li>
-      <li><a href="#contacto">Contacto</a></li>
-    </ul>
-    <a class="btn sm" href="https://wa.me/51947476627?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Academia%20Decana%20y%20quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener">Escribir por WhatsApp</a>
+  <div class="wrap nav-in">
+    <a class="brand" href="#main" aria-label="Academia Decana, ir al inicio"><span class="mark-a" aria-hidden="true">D</span><span>Academia Decana</span></a>
+    <nav aria-label="Secciones"><ul><li><a href="#cursos">Qué ofrecemos</a></li><li><a href="#matricula">Matrícula</a></li><li><a href="#ubicacion">Horario y ubicación</a></li><li><a href="#preguntas">Preguntas</a></li></ul></nav>
+    <a class="btn btn-sm nav-cta" href="https://wa.me/51947476627?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Academia%20Decana%20y%20quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg><span class="lg">Pedir información</span><span class="sm">WhatsApp</span></a>
   </div>
 </header>
-
-<main id="top">
-  <div class="hero">
-    <div class="wrap">
-      <div class="reveal">
-        <span class="eyebrow">Academia · Centro educativo · Los Olivos</span>
-        <h1>Academia Decana</h1>
-        <p class="lead">Información clara, horarios y ubicación en un solo lugar. Escríbenos y coordina tu visita.</p>
-        <div class="cta">
-          <a class="btn" href="https://wa.me/51947476627?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Academia%20Decana%20y%20quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener" style="background:#25d366;box-shadow:0 10px 24px -8px rgba(37,211,102,.6)">
-            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.8 11.8 0 0012 0C5.4 0 .1 5.3.1 11.9c0 2.1.5 4.1 1.6 5.9L0 24l6.3-1.6a11.9 11.9 0 005.7 1.5c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.4-8.5zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4a9.9 9.9 0 01-1.5-5.2C2.2 6.5 6.6 2.1 12 2.1c2.6 0 5.1 1 7 2.9a9.8 9.8 0 012.9 7c0 5.4-4.4 9.8-9.9 9.8zm5.4-7.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1l-.9 1.1c-.2.2-.3.2-.6.1a8 8 0 01-4-3.5c-.3-.5.3-.5.9-1.6.1-.2.1-.4 0-.5l-.9-2.1c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.5.7.6-.1 1.8-.7 2-1.5.3-.7.3-1.3.2-1.5-.1-.1-.3-.2-.6-.3z"/></svg>
-            Escribir por WhatsApp
-          </a>
-          <a class="btn ghost" href="#visitanos">Cómo llegar</a>
-        </div>
-        <span class="badge">4.4★ · 18 reseñas en Google</span>
+<main id="main">
+<section class="a-hero">
+  <div class="wrap hero-in">
+    <div class="hero-copy">
+      <p class="kick ld" style="--i:0">Academia · Centro educativo en Los Olivos</p>
+      <h1 class="ld" style="--i:1">Prepárate para dar <mark>tu mejor examen</mark></h1>
+      <p class="lead ld" style="--i:2">Preparación académica en Los Olivos. Consulta ciclos, horarios y matrícula por WhatsApp.</p>
+      <div class="ctas ld" style="--i:3">
+        <a class="btn" href="https://wa.me/51947476627?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Academia%20Decana%20y%20quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Pedir información</a>
+        <a class="link" href="#ubicacion">Ver horario y ubicación</a>
       </div>
-      <aside class="card-hero reveal">
-        <dl>
-          <div><dt>Horario</dt><dd>Lunes a sábado · 7:20 a. m. – 6:30 p. m. · Domingo cerrado (según Google Maps)</dd></div>
-          <div><dt>Dirección</dt><dd>Av. Alfredo Mendiola 3815, Los Olivos 15113</dd></div>
-          <div><dt>WhatsApp</dt><dd>947 476 627</dd></div>
-        </dl>
-      </aside>
+    </div>
+    <div class="hero-vis">
+      <figure class="hero-photo ld" style="--i:1"><img src="https://images.pexels.com/photos/16420457/pexels-photo-16420457.jpeg?auto=compress&cs=tinysrgb&w=1200" srcset="https://images.pexels.com/photos/16420457/pexels-photo-16420457.jpeg?auto=compress&cs=tinysrgb&w=480 480w, https://images.pexels.com/photos/16420457/pexels-photo-16420457.jpeg?auto=compress&cs=tinysrgb&w=800 800w, https://images.pexels.com/photos/16420457/pexels-photo-16420457.jpeg?auto=compress&cs=tinysrgb&w=1200 1200w, https://images.pexels.com/photos/16420457/pexels-photo-16420457.jpeg?auto=compress&cs=tinysrgb&w=1600 1600w" sizes="(min-width: 900px) 48vw, 100vw" width="1600" height="1067" alt="Estudiantes repasando juntos con un libro" loading="eager" fetchpriority="high" decoding="async" style="object-position:50% 50%"></figure>
+      <div class="index-card ld" style="--i:3">
+        <p class="ic-h">Horario de atención</p>
+        <p class="ic-v">Lun a sáb · 7:20 a. m. a 6:30 p. m.</p>
+        <p class="status" data-status><span class="dot"></span><span class="st-t">Según Google Maps</span></p>
+      </div>
     </div>
   </div>
-
-  <section id="servicios">
-    <div class="wrap">
-      <p class="kicker">Servicios</p>
-      <h2 class="reveal">Lo que puedes consultar</h2>
-      <p class="sub reveal">Para detalles, disponibilidad y precios, escríbenos por WhatsApp y te atendemos directamente.</p>
-      <div class="grid reveal"><article class="svc"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 14.3 7.2 16.9l.9-5.4L4.2 7.7l5.4-.8z"/></svg></span><h3>Preparación académica</h3></article><article class="svc"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><h3>Información de ciclos y horarios</h3></article><article class="svc"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><h3>Consultas de matrícula</h3></article><article class="svc"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 11-3-6.7"/><path d="M21 4v5h-5"/></svg></span><h3>Atención por WhatsApp</h3></article></div>
-    </div>
-  </section>
-
-  <section style="padding-top:0">
-    <div class="wrap">
-      <p class="kicker">Cómo funciona</p>
-      <h2 class="reveal">Tres pasos, sin complicaciones</h2>
-      <div class="steps reveal" style="margin-top:28px">
-        <div class="step"><h3>Escríbenos</h3><p>Cuéntanos qué necesitas por WhatsApp o pregúntale al asistente de esta página.</p></div>
-        <div class="step"><h3>Te orientamos</h3><p>Resolvemos tus dudas sobre servicios, horarios y cómo llegar.</p></div>
-        <div class="step"><h3>Coordina tu visita</h3><p>Acuerda el día y la hora que mejor te quede.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="visitanos" style="padding-top:0">
-    <div class="wrap">
-      <p class="kicker">Horario y ubicación</p>
-      <h2 class="reveal">Visítanos en Los Olivos</h2>
-      <p class="sub reveal">Revisa el horario y cómo llegar antes de salir.</p>
-      <div class="info reveal">
-        <div class="panel">
-          <h3>Horario</h3><p>Lunes a sábado · 7:20 a. m. – 6:30 p. m. · Domingo cerrado (según Google Maps)</p>
-          <h3>Dirección</h3><p>Av. Alfredo Mendiola 3815, Los Olivos 15113</p>
-          <a class="btn sm" href="https://www.google.com/maps/search/?api=1&amp;query=ACADEMIA%20DECANA%2C%20Av.%20Alfredo%20Mendiola%203815%2C%20Los%20Olivos" target="_blank" rel="noopener">Abrir en Google Maps</a>
-        </div>
-        <div class="map"><iframe title="Mapa de Academia Decana" src="https://www.google.com/maps?q=ACADEMIA%20DECANA%2C%20Av.%20Alfredo%20Mendiola%203815%2C%20Los%20Olivos&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
-      </div>
-    </div>
-  </section>
-
-  <section id="contacto" style="padding-top:0">
-    <div class="wrap">
-      <div class="band reveal">
-        <h2>¿Listo para escribirnos?</h2>
-        <p>Cuéntanos qué necesitas y te respondemos por WhatsApp.</p>
-        <a class="btn" href="https://wa.me/51947476627?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Academia%20Decana%20y%20quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener">Abrir WhatsApp</a>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer>
+</section>
+<section class="a-svc" id="cursos">
   <div class="wrap">
-    <div>Academia Decana · Academia · Centro educativo · Los Olivos</div>
-    <div>Demo no oficial, preparada con datos públicos de Google Maps por José Larosa (desarrollador en Lima). No es el sitio oficial del negocio.</div>
+    <h2>Qué puedes consultar</h2>
+    <p class="sub">Toca una opción y te escribimos por WhatsApp con la información.</p>
+    <ul class="rows"><li><a href="https://wa.me/51947476627?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%3A%20Preparaci%C3%B3n%20acad%C3%A9mica." target="_blank" rel="noopener"><span class="row-ic"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 19a9 9 0 0 1 9 0a9 9 0 0 1 9 0" /> <path d="M3 6a9 9 0 0 1 9 0a9 9 0 0 1 9 0" /> <path d="M3 6l0 13" /> <path d="M12 6l0 13" /> <path d="M21 6l0 13" /></svg></span><span class="row-t"><h3>Preparación académica</h3><p>Clases para reforzar cursos y prepararte con orden.</p></span><svg class="ic row-go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 7l-10 10" /> <path d="M8 7l9 0l0 9" /></svg></a></li><li><a href="https://wa.me/51947476627?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%3A%20Informaci%C3%B3n%20de%20ciclos%20y%20horarios." target="_blank" rel="noopener"><span class="row-ic"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M11.795 21h-6.795a2 2 0 0 1 -2 -2v-12a2 2 0 0 1 2 -2h12a2 2 0 0 1 2 2v4" /> <path d="M18 18m-4 0a4 4 0 1 0 8 0a4 4 0 1 0 -8 0" /> <path d="M15 3v4" /> <path d="M7 3v4" /> <path d="M3 11h16" /> <path d="M18 16.496v1.504l1 1" /></svg></span><span class="row-t"><h3>Información de ciclos y horarios</h3><p>Pregunta por las fechas, los horarios y las modalidades disponibles.</p></span><svg class="ic row-go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 7l-10 10" /> <path d="M8 7l9 0l0 9" /></svg></a></li><li><a href="https://wa.me/51947476627?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%3A%20Consultas%20de%20matr%C3%ADcula." target="_blank" rel="noopener"><span class="row-ic"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 15m-3 0a3 3 0 1 0 6 0a3 3 0 1 0 -6 0" /> <path d="M13 17.5v4.5l2 -1.5l2 1.5v-4.5" /> <path d="M10 19h-5a2 2 0 0 1 -2 -2v-10c0 -1.1 .9 -2 2 -2h14a2 2 0 0 1 2 2v10a2 2 0 0 1 -1 1.73" /> <path d="M6 9l12 0" /> <path d="M6 12l3 0" /> <path d="M6 15l2 0" /></svg></span><span class="row-t"><h3>Consultas de matrícula</h3><p>Te explicamos los pasos para inscribirte.</p></span><svg class="ic row-go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 7l-10 10" /> <path d="M8 7l9 0l0 9" /></svg></a></li><li><a href="https://wa.me/51947476627?text=Hola%2C%20quisiera%20informaci%C3%B3n%20sobre%3A%20Atenci%C3%B3n%20por%20WhatsApp." target="_blank" rel="noopener"><span class="row-ic"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 11v.01" /> <path d="M8 11v.01" /> <path d="M16 11v.01" /> <path d="M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3z" /></svg></span><span class="row-t"><h3>Atención por WhatsApp</h3><p>Respuestas directas a tus preguntas por WhatsApp.</p></span><svg class="ic row-go" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 7l-10 10" /> <path d="M8 7l9 0l0 9" /></svg></a></li></ul>
+  </div>
+</section>
+<section class="a-steps" id="matricula">
+  <div class="wrap">
+    <h2>Cómo matricularte</h2>
+    <ol class="ruler rv">
+      <li><span class="n">1</span><h3>Escríbenos</h3><p>Cuéntanos a qué te estás preparando y en qué horario puedes estudiar.</p></li>
+      <li><span class="n">2</span><h3>Recibe la información</h3><p>Te enviamos los ciclos, horarios y modalidades disponibles.</p></li>
+      <li><span class="n">3</span><h3>Separa tu vacante</h3><p>Te explicamos los pasos de matrícula por WhatsApp o en la academia.</p></li>
+      <li><span class="n">4</span><h3>Empieza a prepararte</h3><p>Llegas a tu primera clase con todo listo.</p></li>
+    </ol>
+  </div>
+</section>
+<section class="a-proof" aria-label="Calificación en Google">
+  <div class="wrap proof-in">
+    <figure class="rv"><img src="https://images.pexels.com/photos/7092523/pexels-photo-7092523.jpeg?auto=compress&cs=tinysrgb&w=1200" srcset="https://images.pexels.com/photos/7092523/pexels-photo-7092523.jpeg?auto=compress&cs=tinysrgb&w=480 480w, https://images.pexels.com/photos/7092523/pexels-photo-7092523.jpeg?auto=compress&cs=tinysrgb&w=800 800w, https://images.pexels.com/photos/7092523/pexels-photo-7092523.jpeg?auto=compress&cs=tinysrgb&w=1200 1200w, https://images.pexels.com/photos/7092523/pexels-photo-7092523.jpeg?auto=compress&cs=tinysrgb&w=1600 1600w" sizes="(min-width: 900px) 50vw, 100vw" width="1600" height="1067" alt="Dos estudiantes concentrados resolviendo un examen" loading="lazy" decoding="async" style="object-position:50% 50%"></figure>
+    <div class="proof-txt">
+      <p class="big">4,4</p>
+      <span class="stars" role="img" aria-label="4,4 de 5 estrellas"><span class="s-bg"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"/></svg></span><span class="s-fg" style="width:88%"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"/></svg><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 17.75l-6.172 3.245l1.179 -6.873l-5 -4.867l6.9 -1l3.086 -6.253l3.086 6.253l6.9 1l-5 4.867l1.179 6.873z"/></svg></span></span>
+      <p>Calificación en Google Maps, con <strong>18 reseñas</strong>. Léelas antes de decidir.</p>
+      <a class="btn btn-line" href="https://www.google.com/maps/search/?api=1&amp;query=ACADEMIA%20DECANA%2C%20Av.%20Alfredo%20Mendiola%203815%2C%20Los%20Olivos" target="_blank" rel="noopener">Leer reseñas en Google<svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M17 7l-10 10" /> <path d="M8 7l9 0l0 9" /></svg></a>
+    </div>
+  </div>
+</section>
+<section class="a-loc" id="ubicacion">
+  <div class="wrap loc-in">
+    <div class="loc-card">
+      <h2>Horario y ubicación</h2>
+      <p class="status" data-status><span class="dot"></span><span class="st-t">Horario según Google Maps</span></p>
+      <dl class="hours"><div class="hrow" data-day="0"><dt>Lunes</dt><dd>7:20 a. m. a 6:30 p. m.</dd></div><div class="hrow" data-day="1"><dt>Martes</dt><dd>7:20 a. m. a 6:30 p. m.</dd></div><div class="hrow" data-day="2"><dt>Miércoles</dt><dd>7:20 a. m. a 6:30 p. m.</dd></div><div class="hrow" data-day="3"><dt>Jueves</dt><dd>7:20 a. m. a 6:30 p. m.</dd></div><div class="hrow" data-day="4"><dt>Viernes</dt><dd>7:20 a. m. a 6:30 p. m.</dd></div><div class="hrow" data-day="5"><dt>Sábado</dt><dd>7:20 a. m. a 6:30 p. m.</dd></div><div class="hrow" data-day="6"><dt>Domingo</dt><dd>Cerrado</dd></div></dl>
+      <p class="addr"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 11a3 3 0 1 0 6 0a3 3 0 0 0 -6 0" /> <path d="M17.657 16.657l-4.243 4.243a2 2 0 0 1 -2.827 0l-4.244 -4.243a8 8 0 1 1 11.314 0z" /></svg><span>Av. Alfredo Mendiola 3815, Los Olivos 15113</span></p>
+      <a class="btn" href="https://www.google.com/maps/search/?api=1&amp;query=ACADEMIA%20DECANA%2C%20Av.%20Alfredo%20Mendiola%203815%2C%20Los%20Olivos" target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3 19a2 2 0 1 0 4 0a2 2 0 0 0 -4 0" /> <path d="M19 7a2 2 0 1 0 0 -4a2 2 0 0 0 0 4z" /> <path d="M11 19h5.5a3.5 3.5 0 0 0 0 -7h-8a3.5 3.5 0 0 1 0 -7h4.5" /></svg>Cómo llegar</a>
+      <p class="fine">Horario según Google Maps. Confírmalo por WhatsApp antes de ir.</p>
+    </div>
+    <div class="map"><iframe title="Mapa de Academia Decana" src="https://www.google.com/maps?q=ACADEMIA%20DECANA%2C%20Av.%20Alfredo%20Mendiola%203815%2C%20Los%20Olivos&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+  </div>
+</section>
+<section class="a-faq" id="preguntas">
+  <div class="wrap faq-in">
+    <h2>Preguntas frecuentes</h2>
+    <div class="faq"><details class="qa"><summary><span>¿Cuándo empiezan los ciclos?</span><svg class="ic qa-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5l0 14" /> <path d="M5 12l14 0" /></svg></summary><div class="qa-a"><p>Las fechas de inicio cambian durante el año. Escríbenos por <a href="https://wa.me/51947476627?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Academia%20Decana%20y%20quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener">WhatsApp</a> y te enviamos la información vigente de ciclos y horarios.</p></div></details><details class="qa"><summary><span>¿Cuánto cuesta la matrícula?</span><svg class="ic qa-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5l0 14" /> <path d="M5 12l14 0" /></svg></summary><div class="qa-a"><p>Los costos dependen del ciclo y la modalidad, así que no los publicamos aquí. Pregúntanos por <a href="https://wa.me/51947476627?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Academia%20Decana%20y%20quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener">WhatsApp</a> y te los enviamos.</p></div></details><details class="qa"><summary><span>¿Cuál es el horario de atención?</span><svg class="ic qa-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5l0 14" /> <path d="M5 12l14 0" /></svg></summary><div class="qa-a"><p>Lunes a sábado: 7:20 a. m. a 6:30 p. m. Domingo: cerrado. Según Google Maps; confírmalo por <a href="https://wa.me/51947476627?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Academia%20Decana%20y%20quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener">WhatsApp</a>.</p></div></details><details class="qa"><summary><span>¿Dónde están?</span><svg class="ic qa-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5l0 14" /> <path d="M5 12l14 0" /></svg></summary><div class="qa-a"><p>Av. Alfredo Mendiola 3815, Los Olivos 15113. <a href="https://www.google.com/maps/search/?api=1&amp;query=ACADEMIA%20DECANA%2C%20Av.%20Alfredo%20Mendiola%203815%2C%20Los%20Olivos" target="_blank" rel="noopener">Abrir en Google Maps</a>.</p></div></details></div>
+  </div>
+</section>
+<section class="a-final">
+  <div class="wrap final-in">
+    <div class="final-copy">
+      <h2>¿Quieres la información de los próximos ciclos?</h2>
+      <p>Escríbenos y te la enviamos por WhatsApp.</p>
+      <a class="btn btn-light" href="https://wa.me/51947476627?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Academia%20Decana%20y%20quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener"><svg class="ic" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>Pedir información</a>
+    </div>
+    <figure><img src="https://images.pexels.com/photos/6238031/pexels-photo-6238031.jpeg?auto=compress&cs=tinysrgb&w=1200" srcset="https://images.pexels.com/photos/6238031/pexels-photo-6238031.jpeg?auto=compress&cs=tinysrgb&w=480 480w, https://images.pexels.com/photos/6238031/pexels-photo-6238031.jpeg?auto=compress&cs=tinysrgb&w=800 800w, https://images.pexels.com/photos/6238031/pexels-photo-6238031.jpeg?auto=compress&cs=tinysrgb&w=1200 1200w, https://images.pexels.com/photos/6238031/pexels-photo-6238031.jpeg?auto=compress&cs=tinysrgb&w=1600 1600w" sizes="(min-width: 900px) 40vw, 100vw" width="1600" height="1067" alt="Estudiante sonriente tomando apuntes" loading="lazy" decoding="async" style="object-position:50% 40%"></figure>
+  </div>
+</section>
+</main>
+<footer class="foot">
+  <div class="wrap foot-in">
+    <div>
+      <p class="foot-name">Academia Decana</p>
+      <p>Av. Alfredo Mendiola 3815, Los Olivos 15113</p>
+      <p><a href="https://wa.me/51947476627?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Academia%20Decana%20y%20quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener">WhatsApp 947 476 627</a></p>
+    </div>
+    <div class="foot-legal">
+      <p>Demo no oficial preparada con datos públicos de Google Maps. No es el sitio oficial del negocio. Fotos referenciales de Pexels.</p>
+      <p class="credit">Diseño y desarrollo: <a href="https://portafolio-v2-hazel.vercel.app/" target="_blank" rel="noopener">José Larosa</a></p>
+    </div>
   </div>
 </footer>
-
-<a class="fab" href="https://wa.me/51947476627?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Academia%20Decana%20y%20quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
-  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.8 11.8 0 0012 0C5.4 0 .1 5.3.1 11.9c0 2.1.5 4.1 1.6 5.9L0 24l6.3-1.6a11.9 11.9 0 005.7 1.5c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.4-8.5zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4a9.9 9.9 0 01-1.5-5.2C2.2 6.5 6.6 2.1 12 2.1c2.6 0 5.1 1 7 2.9a9.8 9.8 0 012.9 7c0 5.4-4.4 9.8-9.9 9.8zm5.4-7.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1l-.9 1.1c-.2.2-.3.2-.6.1a8 8 0 01-4-3.5c-.3-.5.3-.5.9-1.6.1-.2.1-.4 0-.5l-.9-2.1c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.5.7.6-.1 1.8-.7 2-1.5.3-.7.3-1.3.2-1.5-.1-.1-.3-.2-.6-.3z"/></svg>
-</a>
-
-<button class="chat-toggle" id="chatToggle" aria-expanded="false" aria-controls="chat"><span class="dot"></span><span class="t">Pregúntale al asistente</span></button>
-
-<div class="chat" id="chat" role="dialog" aria-label="Asistente de demostración">
-  <div class="chat-head"><i>A</i><div><b>Asistente de Academia Decana</b><small>Demostración · respuestas automáticas</small></div><button class="chat-x" id="chatClose" aria-label="Cerrar">×</button></div>
-  <div class="chat-body" id="chatBody" aria-live="polite"></div>
-  <div class="chips" id="chips"></div>
-  <form class="chat-form" id="chatForm" autocomplete="off">
-    <input id="chatInput" type="text" placeholder="Escribe tu pregunta…" aria-label="Escribe tu pregunta">
-    <button type="submit">Enviar</button>
-  </form>
-  <div class="note">Asistente de demostración: responde con la información de esta página.</div>
+<div class="dock">
+  <button class="chat-launch" id="chatLaunch" type="button" aria-controls="chat" aria-expanded="false" hidden><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 11v.01" /> <path d="M8 11v.01" /> <path d="M16 11v.01" /> <path d="M18 4a3 3 0 0 1 3 3v8a3 3 0 0 1 -3 3h-5l-5 3v-3h-2a3 3 0 0 1 -3 -3v-8a3 3 0 0 1 3 -3z" /></svg><span>¿Dudas? Pregunta aquí</span></button>
+  <a class="wa-fab" href="https://wa.me/51947476627?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Academia%20Decana%20y%20quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp"><svg class="ic" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg></a>
 </div>
-
+<section class="chat" id="chat" role="dialog" aria-modal="false" aria-labelledby="chatTitle" hidden>
+  <header class="chat-head">
+    <span class="chat-av" aria-hidden="true">A</span>
+    <div class="chat-id"><h2 id="chatTitle">Asistente de Academia Decana</h2><p><span class="chat-on"></span>Demo · respuestas automáticas</p></div>
+    <button class="chat-x" id="chatClose" type="button" aria-label="Cerrar asistente"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6l-12 12" /> <path d="M6 6l12 12" /></svg></button>
+  </header>
+  <div class="chat-log" id="chatLog" role="log" aria-live="polite"></div>
+  <div class="chat-chips" id="chatChips" aria-label="Preguntas sugeridas"></div>
+  <form class="chat-form" id="chatForm" autocomplete="off">
+    <label class="sr" for="chatInput">Escribe tu pregunta</label>
+    <input id="chatInput" type="text" placeholder="Escribe tu pregunta" maxlength="200">
+    <button type="submit" aria-label="Enviar"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 14l11 -11" /> <path d="M21 3l-6.5 18a.55 .55 0 0 1 -1 0l-3.5 -7l-7 -3.5a.55 .55 0 0 1 0 -1l18 -6.5" /></svg></button>
+  </form>
+  <p class="chat-note">Asistente de demostración. Para atención real, usa WhatsApp.</p>
+</section>
 <script>
-const D = {"nombre": "Academia Decana", "rubro": "Academia · Centro educativo", "distrito": "Los Olivos", "direccion": "Av. Alfredo Mendiola 3815, Los Olivos 15113", "horario": "Lunes a sábado · 7:20 a. m. – 6:30 p. m. · Domingo cerrado (según Google Maps)", "servicios": ["Preparación académica", "Información de ciclos y horarios", "Consultas de matrícula", "Atención por WhatsApp"], "rating": "4.4★ · 18 reseñas en Google", "wa": "https://wa.me/51947476627?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Academia%20Decana%20y%20quisiera%20hacer%20una%20consulta.", "maps": "https://www.google.com/maps/search/?api=1&query=ACADEMIA%20DECANA%2C%20Av.%20Alfredo%20Mendiola%203815%2C%20Los%20Olivos"};
-const body = document.getElementById('chatBody');
-const chat = document.getElementById('chat');
-const toggle = document.getElementById('chatToggle');
-const input = document.getElementById('chatInput');
-const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
-const norm = s => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
-const wa = (t) => '<a href="' + esc(D.wa) + '" target="_blank" rel="noopener">' + t + '</a>';
+const D={"semana": [["07:20", "18:30"], ["07:20", "18:30"], ["07:20", "18:30"], ["07:20", "18:30"], ["07:20", "18:30"], ["07:20", "18:30"], null], "dias": ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes", "Sábado", "Domingo"], "greeting": "Hola, soy el asistente de Academia Decana. Te ayudo con ciclos, matrícula, horarios y ubicación. ¿Qué quieres saber?", "fallback": "No tengo esa información en esta demo. Escríbenos por <a href=\"https://wa.me/51947476627?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Academia%20Decana%20y%20quisiera%20hacer%20una%20consulta.\" target=\"_blank\" rel=\"noopener\">WhatsApp<\/a> y te ayudamos.", "faq": [{"k": "Ciclos", "q": "¿Cuándo empiezan los ciclos?", "re": "(ciclo|inicio|empiez|cuando empieza|fecha|vacante)", "a": "Las fechas de inicio cambian durante el año. Escríbenos por <a href=\"https://wa.me/51947476627?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Academia%20Decana%20y%20quisiera%20hacer%20una%20consulta.\" target=\"_blank\" rel=\"noopener\">WhatsApp<\/a> y te enviamos la información vigente de ciclos y horarios."}, {"k": "Precios", "q": "¿Cuánto cuesta?", "re": "(precio|cuesta|costo|cuanto|pension|mensualidad|pagar|matricula)", "a": "Los costos dependen del ciclo y la modalidad, así que no los publicamos aquí. Pregúntanos por <a href=\"https://wa.me/51947476627?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Academia%20Decana%20y%20quisiera%20hacer%20una%20consulta.\" target=\"_blank\" rel=\"noopener\">WhatsApp<\/a> y te los enviamos."}, {"k": "Horario", "q": "¿Cuál es su horario?", "re": "(horario|hora|abren|abierto|atienden|cierran|dia|domingo|sabado)", "a": "__STATUS__. Lunes a sábado: 7:20 a. m. a 6:30 p. m. Domingo: cerrado. Según Google Maps; confírmalo por <a href=\"https://wa.me/51947476627?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Academia%20Decana%20y%20quisiera%20hacer%20una%20consulta.\" target=\"_blank\" rel=\"noopener\">WhatsApp<\/a>."}, {"k": "Ubicación", "q": "¿Dónde están?", "re": "(ubicacion|direccion|donde|llegar|mapa|queda|distrito|referencia|paradero)", "a": "Av. Alfredo Mendiola 3815, Los Olivos 15113. <a href=\"https://www.google.com/maps/search/?api=1&amp;query=ACADEMIA%20DECANA%2C%20Av.%20Alfredo%20Mendiola%203815%2C%20Los%20Olivos\" target=\"_blank\" rel=\"noopener\">Abrir en Google Maps<\/a>."}, {"k": "Reseñas", "q": "¿Qué opinan en Google?", "re": "(resena|opinion|calificacion|estrella|rating|recomiendan|valoracion|google)", "a": "En Google Maps tenemos 4,4 de 5 estrellas con 18 reseñas. <a href=\"https://www.google.com/maps/search/?api=1&amp;query=ACADEMIA%20DECANA%2C%20Av.%20Alfredo%20Mendiola%203815%2C%20Los%20Olivos\" target=\"_blank\" rel=\"noopener\">Leer reseñas<\/a>."}, {"k": "Hablar con alguien", "q": "Quiero hablar con alguien", "re": "(whatsapp|telefono|numero|llamar|hablar|escribir|contacto|persona|humano)", "a": "Claro. Escríbenos por <a href=\"https://wa.me/51947476627?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Academia%20Decana%20y%20quisiera%20hacer%20una%20consulta.\" target=\"_blank\" rel=\"noopener\">WhatsApp<\/a> y te responde una persona del equipo."}]};
 
-const FAQ = [
-  { k: 'Precios', re: /(precio|cuesta|costo|cuanto|tarifa|pagar|cuota|presupuesto|valor)/,
-    a: () => 'Los precios dependen de cada caso. Consúltanos por WhatsApp y te respondemos: ' + wa('abrir WhatsApp') + '.' },
-  { k: 'Horario', re: /(horario|hora |horas|abren|abierto|atienden|cierran|cuando|dias|domingo|sabado|feriado)/,
-    a: () => 'Nuestro horario: ' + esc(D.horario) },
-  { k: 'Ubicación', re: /(ubicacion|direccion|donde|llegar|mapa|queda|distrito|referencia)/,
-    a: () => esc(D.direccion) + ' (' + esc(D.distrito) + '). ' + '<a href="' + esc(D.maps) + '" target="_blank" rel="noopener">Ver en Google Maps</a>' },
-  { k: 'Servicios', re: /(servicio|ofrecen|hacen|tratamiento|que ofrecen|atienden a|especialidad|clases|curso|ciclo)/,
-    a: () => 'Puedes consultar por: ' + D.servicios.map(esc).join(', ') + '. Para detalles escríbenos por ' + wa('WhatsApp') + '.' },
-  { k: 'Reseñas', re: /(resena|opinion|calificacion|estrella|rating|recomiendan|valoracion)/,
-    a: () => D.rating ? ('En Google Maps: ' + esc(D.rating) + '.') : 'Puedes ver las reseñas en Google Maps.' },
-  { k: 'Contacto', re: /(cita|reserv|agendar|turno|matricula|contacto|whatsapp|telefono|numero|llamar|hablar|escribir)/,
-    a: () => 'Para coordinar, escríbenos por ' + wa('WhatsApp') + '.' },
-];
+(function(){
+  var $=function(s){return document.querySelector(s)};
+  var reduce=window.matchMedia&&matchMedia('(prefers-reduced-motion: reduce)').matches;
+  function toMin(s){var p=s.split(':');return (+p[0])*60+(+p[1])}
+  function t12(s){var p=s.split(':'),h=(+p[0])%24,m=+p[1],suf=h<12?'a. m.':'p. m.',hh=h%12||12;return hh+(m?':'+(m<10?'0':'')+m:'')+' '+suf}
+  function limaNow(){
+    try{
+      var parts=new Intl.DateTimeFormat('en-US',{timeZone:'America/Lima',weekday:'short',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(new Date());
+      var g=function(t){for(var i=0;i<parts.length;i++)if(parts[i].type===t)return parts[i].value};
+      return {d:['Mon','Tue','Wed','Thu','Fri','Sat','Sun'].indexOf(g('weekday')),m:(+g('hour'))%24*60+(+g('minute'))};
+    }catch(e){var n=new Date();return {d:(n.getDay()+6)%7,m:n.getHours()*60+n.getMinutes()}}
+  }
+  function status(){
+    var n=limaNow(),S=D.semana,day=S[n.d];
+    if(day&&n.m>=toMin(day[0])&&n.m<toMin(day[1])){
+      if(day[1]==='24:00'&&day[0]==='00:00')return {open:true,text:'Abierto ahora, las 24 horas'};
+      return {open:true,text:'Abierto ahora · cierra a las '+t12(day[1])};
+    }
+    for(var i=0;i<8;i++){
+      var di=(n.d+i)%7,dd=S[di];
+      if(!dd)continue;
+      if(i===0&&n.m>=toMin(dd[0]))continue;
+      var when=i===0?'hoy':i===1?'mañana':'el '+D.dias[di].toLowerCase();
+      return {open:false,text:'Cerrado ahora · abre '+when+' a las '+t12(dd[0])};
+    }
+    return {open:false,text:'Consulta el horario por WhatsApp'};
+  }
+  var st=status(),today=limaNow().d;
+  document.querySelectorAll('[data-status]').forEach(function(el){
+    el.classList.add(st.open?'is-open':'is-closed');
+    var t=el.querySelector('.st-t');if(t)t.textContent=st.text;
+  });
+  document.querySelectorAll('.hrow[data-day="'+today+'"]').forEach(function(r){r.classList.add('today')});
 
-function add(text, who, html) {
-  const m = document.createElement('div');
-  m.className = 'msg ' + who;
-  if (html) m.innerHTML = text; else m.textContent = text;
-  body.appendChild(m);
-  body.scrollTop = body.scrollHeight;
-}
-function answer(q) {
-  const n = norm(q) + ' ';
-  const hit = FAQ.find(f => f.re.test(n));
-  return hit ? hit.a() : 'No tengo esa información en esta demostración. Escríbenos por ' + wa('WhatsApp') + ' y te ayudamos.';
-}
-function ask(q) {
-  add(q, 'me');
-  setTimeout(() => add(answer(q), 'bot', true), 350);
-}
-FAQ.forEach(f => {
-  const b = document.createElement('button');
-  b.type = 'button'; b.className = 'chip'; b.textContent = f.k;
-  b.addEventListener('click', () => ask(f.k === 'Contacto' ? 'Quiero agendar o contactarlos' : f.k));
-  document.getElementById('chips').appendChild(b);
-});
-add('Hola, soy el asistente de demostración de ' + D.nombre + '. Puedo contarte sobre precios, horario, ubicación y servicios.', 'bot');
-document.getElementById('chatForm').addEventListener('submit', e => {
-  e.preventDefault();
-  const v = input.value.trim();
-  if (!v) return;
-  input.value = '';
-  ask(v);
-});
-function setOpen(o) {
-  chat.classList.toggle('open', o);
-  toggle.setAttribute('aria-expanded', o);
-  if (o) input.focus();
-}
-toggle.addEventListener('click', () => setOpen(!chat.classList.contains('open')));
-document.getElementById('chatClose').addEventListener('click', () => setOpen(false));
-document.addEventListener('keydown', e => { if (e.key === 'Escape') setOpen(false); });
-
-const io = 'IntersectionObserver' in window ? new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12 }) : null;
-document.querySelectorAll('.reveal').forEach(el => io ? io.observe(el) : el.classList.add('in'));
+  /* demo assistant */
+  var panel=$('#chat'),launch=$('#chatLaunch'),log=$('#chatLog'),input=$('#chatInput'),chips=$('#chatChips');
+  if(!panel||!launch)return;
+  panel.hidden=false;launch.hidden=false;
+  var greeted=false,busy=0;
+  function norm(s){return s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g,'')}
+  function scroll(){log.scrollTop=log.scrollHeight}
+  function bubble(content,who){
+    var el=document.createElement('div');el.className='msg '+who;
+    if(who==='me')el.textContent=content;else el.innerHTML=content;
+    log.appendChild(el);scroll();return el;
+  }
+  function reply(html){
+    var t=document.createElement('div');t.className='msg bot typing';t.setAttribute('aria-label','Escribiendo');
+    t.innerHTML='<i></i><i></i><i></i>';log.appendChild(t);scroll();busy++;
+    var delay=reduce?200:Math.min(1500,550+html.replace(/<[^>]+>/g,'').length*5);
+    setTimeout(function(){t.remove();bubble(html,'bot');busy--;},delay);
+  }
+  function answer(q){
+    var n=' '+norm(q)+' ';
+    for(var i=0;i<D.faq.length;i++){if(new RegExp(D.faq[i].re).test(n)){var st=status().text;return D.faq[i].a.replace('__STATUS__. ',st+(/\.$/.test(st)?' ':'. '))}}
+    return D.fallback;
+  }
+  function ask(q){bubble(q,'me');reply(answer(q))}
+  D.faq.forEach(function(f){
+    var b=document.createElement('button');b.type='button';b.className='chip';b.textContent=f.k;
+    b.addEventListener('click',function(){ask(f.q)});chips.appendChild(b);
+  });
+  function setOpen(o){
+    panel.classList.toggle('open',o);launch.setAttribute('aria-expanded',o?'true':'false');
+    if(o){
+      if(!greeted){greeted=true;reply(D.greeting)}
+      if(matchMedia('(pointer:fine)').matches)setTimeout(function(){input.focus({preventScroll:true})},220);
+    }else{launch.focus({preventScroll:true})}
+  }
+  launch.addEventListener('click',function(){setOpen(!panel.classList.contains('open'))});
+  $('#chatClose').addEventListener('click',function(){setOpen(false)});
+  document.addEventListener('keydown',function(e){if(e.key==='Escape'&&panel.classList.contains('open'))setOpen(false)});
+  $('#chatForm').addEventListener('submit',function(e){
+    e.preventDefault();var v=input.value.trim();if(!v)return;input.value='';ask(v);
+  });
+})();
 </script>
 </body>
 </html>
