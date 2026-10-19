@@ -149,13 +149,11 @@ figure{margin:0}
 
 /* motion: pure CSS, content is visible without JS */
 @media (prefers-reduced-motion:no-preference){
-  .ld{animation:ld .85s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i,0) * 90ms)}
   @supports (animation-timeline:view()){
-    .rv{animation:rv linear both;animation-timeline:view();animation-range:entry 0% cover 30%}
+    .rv{animation:rv linear both;animation-duration:1ms;animation-timeline:view();animation-range:entry 0% cover 25%}
   }
 }
-@keyframes ld{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-@keyframes rv{from{opacity:.001;transform:translateY(32px)}to{opacity:1;transform:none}}
+@keyframes rv{from{transform:translateY(24px)}to{transform:none}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 
 :root{--bg:#f6f7fa;--surface:#fff;--ink:#151935;--muted:#50577a;--line:#e0e3ec;--mark:#ffe14d;
@@ -178,8 +176,6 @@ h2{font-size:clamp(1.75rem,3.6vw,2.7rem);line-height:1.1}
 .kick{font-weight:600;color:var(--accent);font-size:.98rem}
 .a-hero h1{font-size:clamp(2rem,4.1vw,3.35rem);line-height:1.12;margin:16px 0 20px;max-width:16ch}
 .a-hero mark{color:inherit;background:linear-gradient(transparent 56%,var(--mark) 56%,var(--mark) 90%,transparent 90%) no-repeat 0 0/100% 100%;padding:0 .06em;-webkit-box-decoration-break:clone;box-decoration-break:clone}
-@media (prefers-reduced-motion:no-preference){.a-hero mark{animation:swipe .9s cubic-bezier(.65,0,.35,1) .65s both}}
-@keyframes swipe{from{background-size:0% 100%}to{background-size:100% 100%}}
 .lead{font-size:clamp(1.05rem,1.5vw,1.18rem);color:var(--muted);max-width:40ch;margin-bottom:30px}
 .hero-vis{position:relative;padding-bottom:64px}
 .hero-photo{border-radius:20px;overflow:hidden;aspect-ratio:5/4;box-shadow:0 30px 60px -36px rgba(21,25,53,.5)}

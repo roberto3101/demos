@@ -149,13 +149,11 @@ figure{margin:0}
 
 /* motion: pure CSS, content is visible without JS */
 @media (prefers-reduced-motion:no-preference){
-  .ld{animation:ld .85s cubic-bezier(.2,.7,.2,1) both;animation-delay:calc(var(--i,0) * 90ms)}
   @supports (animation-timeline:view()){
-    .rv{animation:rv linear both;animation-timeline:view();animation-range:entry 0% cover 30%}
+    .rv{animation:rv linear both;animation-duration:1ms;animation-timeline:view();animation-range:entry 0% cover 25%}
   }
 }
-@keyframes ld{from{opacity:0;transform:translateY(14px)}to{opacity:1;transform:none}}
-@keyframes rv{from{opacity:.001;transform:translateY(32px)}to{opacity:1;transform:none}}
+@keyframes rv{from{transform:translateY(24px)}to{transform:none}}
 @media (prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}}
 
 :root{--bg:#edf1ee;--surface:#fff;--ink:#0f2721;--muted:#475c55;--line:#d3dcd7;--pine:#0f2e27;--pine-2:#173d34;--warm:#ff8a5c;
