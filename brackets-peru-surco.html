@@ -1,0 +1,317 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<meta name="description" content="Brackets Perú Oficial – Santiago de Surco · Clínica dental · Ortodoncia en Santiago de Surco. Demo de página web.">
+<meta name="theme-color" content="#121d54">
+<title>Brackets Perú Oficial – Santiago de Surco · Clínica dental · Ortodoncia en Santiago de Surco</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --c:#4f6bed;--c-dark:#10299d;--c-deep:#121d54;--c-soft:#ffffff;--rgb:79,107,237;
+  --bg:#fbfaf8;--surface:#ffffff;--ink:#16181d;--muted:#5c6472;--line:#e7e4de;
+  --radius:20px;--shadow:0 1px 2px rgba(20,22,28,.05),0 12px 32px -12px rgba(20,22,28,.14);
+  --font:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --display:"Fraunces",Georgia,serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:var(--font);color:var(--ink);background:var(--bg);line-height:1.6;-webkit-font-smoothing:antialiased}
+a{color:inherit}
+img,svg{display:block}
+.wrap{width:min(1120px,100% - 40px);margin-inline:auto}
+
+/* banner demo */
+.demo-bar{background:#14161b;color:#f1efe9;font-size:12.5px;line-height:1.35;text-align:center;padding:8px 14px;letter-spacing:.01em}
+.demo-bar b{font-weight:700;color:#fff}
+.demo-bar span{opacity:.72}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:30;background:rgba(251,250,248,.86);backdrop-filter:saturate(1.4) blur(12px);-webkit-backdrop-filter:saturate(1.4) blur(12px);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:12px}
+.brand{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;min-width:0}
+.brand i{flex:none;width:36px;height:36px;border-radius:11px;background:var(--c);color:#fff;display:grid;place-items:center;font:700 18px var(--display);font-style:normal}
+.brand span{white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:46vw;font-size:15px}
+.nav ul{display:none;list-style:none;margin:0;padding:0;gap:26px;font-size:14.5px;font-weight:500;color:var(--muted)}
+.nav ul a{text-decoration:none}.nav ul a:hover{color:var(--ink)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:9px;border:0;cursor:pointer;text-decoration:none;font:600 15px var(--font);padding:13px 22px;border-radius:999px;background:var(--c);color:#fff;transition:transform .18s ease,box-shadow .18s ease,background .18s ease;box-shadow:0 8px 20px -8px rgba(var(--rgb),.7)}
+.btn:hover{transform:translateY(-2px);background:var(--c-dark)}
+.btn:focus-visible,.chip:focus-visible,.fab:focus-visible,.chat-toggle:focus-visible{outline:3px solid var(--c-soft);outline-offset:2px}
+.btn.ghost{background:transparent;color:#fff;box-shadow:inset 0 0 0 1.5px rgba(255,255,255,.4)}
+.btn.ghost:hover{background:rgba(255,255,255,.12)}
+.btn.sm{padding:10px 18px;font-size:14px}
+.btn svg{width:18px;height:18px}
+@media(min-width:820px){.nav ul{display:flex}}
+
+/* hero */
+.hero{position:relative;overflow:hidden;background:var(--c-deep);color:#fff;isolation:isolate}
+.hero::before{content:"";position:absolute;inset:-20% -10% auto auto;width:70vw;height:70vw;max-width:760px;max-height:760px;border-radius:50%;background:radial-gradient(closest-side,rgba(var(--rgb),.55),transparent 70%);z-index:-1}
+.hero::after{content:"";position:absolute;inset:auto auto -30% -15%;width:55vw;height:55vw;max-width:560px;max-height:560px;border-radius:50%;background:radial-gradient(closest-side,rgba(255,255,255,.07),transparent 70%);z-index:-1}
+.hero .wrap{display:grid;gap:36px;padding:56px 0 64px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:rgba(255,255,255,.78)}
+.eyebrow::before{content:"";width:22px;height:2px;background:currentColor;opacity:.6}
+.hero h1{font:700 clamp(34px,7.4vw,64px)/1.04 var(--display);letter-spacing:-.025em;margin:16px 0 18px;text-wrap:balance}
+.hero p.lead{font-size:clamp(16px,2.4vw,19px);color:rgba(255,255,255,.82);max-width:34ch;margin:0 0 28px}
+.cta{display:flex;flex-wrap:wrap;gap:12px}
+.badge{display:inline-flex;align-items:center;gap:6px;margin-top:26px;padding:9px 16px;border-radius:999px;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.22);font-weight:600;font-size:14px;backdrop-filter:blur(6px)}
+.card-hero{background:rgba(255,255,255,.08);border:1px solid rgba(255,255,255,.18);border-radius:24px;padding:26px;backdrop-filter:blur(10px)}
+.card-hero dl{margin:0;display:grid;gap:18px}
+.card-hero dt{font-size:12px;letter-spacing:.09em;text-transform:uppercase;color:rgba(255,255,255,.62);font-weight:600;margin-bottom:4px}
+.card-hero dd{margin:0;font-size:15px;color:#fff;line-height:1.5}
+@media(min-width:900px){.hero .wrap{grid-template-columns:1.25fr .75fr;gap:64px;padding:88px 0 96px}}
+
+/* secciones */
+section{padding:72px 0}
+.kicker{font-size:13px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--c-dark);margin:0 0 10px}
+h2{font:700 clamp(28px,5vw,42px)/1.1 var(--display);letter-spacing:-.02em;margin:0 0 14px;text-wrap:balance}
+.sub{color:var(--muted);max-width:56ch;margin:0 0 36px;font-size:17px}
+.grid{display:grid;gap:16px;grid-template-columns:repeat(auto-fit,minmax(230px,1fr))}
+.svc{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:26px;box-shadow:var(--shadow);transition:transform .2s ease,border-color .2s ease}
+.svc:hover{transform:translateY(-4px);border-color:rgba(var(--rgb),.45)}
+.ico{display:grid;place-items:center;width:48px;height:48px;border-radius:14px;background:var(--c-soft);color:var(--c-dark);margin-bottom:18px}
+.ico svg{width:24px;height:24px}
+.svc h3{font-size:17px;line-height:1.35;margin:0;font-weight:700}
+
+.steps{display:grid;gap:16px;counter-reset:s;grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.step{position:relative;padding:26px 26px 26px 26px;border-radius:var(--radius);background:var(--c-soft);color:var(--c-deep)}
+.step::before{counter-increment:s;content:counter(s);font:700 34px var(--display);color:var(--c-dark);opacity:.9;display:block;margin-bottom:6px}
+.step h3{margin:0 0 4px;font-size:17px}.step p{margin:0;font-size:15px;opacity:.85}
+
+.info{display:grid;gap:20px}
+@media(min-width:900px){.info{grid-template-columns:.8fr 1.2fr;align-items:stretch}}
+.panel{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:28px;box-shadow:var(--shadow)}
+.panel h3{margin:0 0 6px;font-size:13px;letter-spacing:.09em;text-transform:uppercase;color:var(--c-dark)}
+.panel p{margin:0 0 22px;font-size:16px}.panel p:last-of-type{margin-bottom:24px}
+.map{border-radius:var(--radius);overflow:hidden;border:1px solid var(--line);box-shadow:var(--shadow);min-height:340px;background:#e9e7e2}
+.map iframe{width:100%;height:100%;min-height:340px;border:0;display:block}
+
+.band{background:var(--c-deep);color:#fff;border-radius:28px;padding:44px 28px;text-align:center}
+.band h2{color:#fff;margin-inline:auto;max-width:20ch}
+.band p{color:rgba(255,255,255,.78);margin:0 auto 26px;max-width:46ch}
+.band .btn{background:#fff;color:var(--c-deep);box-shadow:none}
+.band .btn:hover{background:var(--c-soft)}
+
+footer{padding:36px 0 120px;color:var(--muted);font-size:13.5px;border-top:1px solid var(--line)}
+footer .wrap{display:grid;gap:8px}
+
+/* botones flotantes */
+.fab{position:fixed;right:18px;bottom:18px;z-index:40;width:60px;height:60px;border-radius:50%;background:#25d366;color:#fff;display:grid;place-items:center;box-shadow:0 12px 28px -6px rgba(37,211,102,.65);transition:transform .18s ease;text-decoration:none}
+.fab:hover{transform:scale(1.07)}.fab svg{width:32px;height:32px}
+.chat-toggle{position:fixed;left:18px;bottom:18px;z-index:40;display:flex;align-items:center;gap:10px;border:0;cursor:pointer;background:#14161b;color:#fff;font:600 14px var(--font);padding:14px 20px;border-radius:999px;box-shadow:0 12px 28px -8px rgba(0,0,0,.5)}
+.chat-toggle .dot{width:9px;height:9px;border-radius:50%;background:#4ade80;box-shadow:0 0 0 4px rgba(74,222,128,.25)}
+
+/* chat demo */
+.chat{position:fixed;left:18px;bottom:82px;z-index:50;width:min(370px,calc(100vw - 36px));max-height:min(540px,calc(100vh - 140px));display:none;flex-direction:column;background:var(--surface);border:1px solid var(--line);border-radius:22px;box-shadow:0 24px 60px -16px rgba(10,12,18,.4);overflow:hidden}
+.chat.open{display:flex}
+.chat-head{display:flex;align-items:center;gap:12px;padding:14px 16px;background:var(--c-deep);color:#fff}
+.chat-head i{flex:none;width:36px;height:36px;border-radius:50%;background:var(--c);display:grid;place-items:center;font:700 16px var(--display);font-style:normal}
+.chat-head div{flex:1;min-width:0;line-height:1.25}.chat-head b{display:block;font-size:14px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.chat-head small{opacity:.7;font-size:12px}
+.chat-x{border:0;background:transparent;color:#fff;font-size:22px;line-height:1;cursor:pointer;padding:4px 8px;border-radius:8px}
+.chat-body{flex:1;overflow:auto;padding:16px;display:flex;flex-direction:column;gap:10px;background:#f6f4f0}
+.msg{max-width:86%;padding:10px 14px;border-radius:16px;font-size:14.5px;line-height:1.5;word-wrap:break-word}
+.msg.bot{background:#fff;border:1px solid var(--line);border-bottom-left-radius:4px;align-self:flex-start}
+.msg.me{background:var(--c);color:#fff;border-bottom-right-radius:4px;align-self:flex-end}
+.msg a{color:var(--c-dark);font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:8px;padding:10px 14px 4px;background:#fff;border-top:1px solid var(--line)}
+.chip{border:1px solid var(--line);background:#fff;color:var(--ink);font:600 13px var(--font);padding:7px 13px;border-radius:999px;cursor:pointer;transition:background .15s,border-color .15s}
+.chip:hover{background:var(--c-soft);border-color:var(--c)}
+.chat-form{display:flex;gap:8px;padding:10px 14px 14px;background:#fff}
+.chat-form input{flex:1;min-width:0;border:1px solid var(--line);border-radius:999px;padding:11px 16px;font:15px var(--font);background:#fbfaf8;color:var(--ink)}
+.chat-form input:focus{outline:2px solid var(--c);border-color:transparent}
+.chat-form button{border:0;border-radius:999px;background:var(--c);color:#fff;font:600 14px var(--font);padding:0 18px;cursor:pointer}
+.note{font-size:11.5px;color:var(--muted);text-align:center;padding:0 14px 10px;background:#fff}
+
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
+.reveal.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){.reveal{opacity:1;transform:none;transition:none}html{scroll-behavior:auto}.btn,.svc,.fab{transition:none}}
+@media(max-width:520px){section{padding:56px 0}.chat-toggle span.t{display:none}.chat-toggle{padding:16px}}
+</style>
+</head>
+<body>
+
+<div class="demo-bar" role="note"><b>Demo no oficial</b> preparada para Brackets Perú Oficial – Santiago de Surco por José Larosa <span>· desarrollador en Lima</span></div>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><i>B</i><span>Brackets Perú Oficial – Santiago de Surco</span></a>
+    <ul>
+      <li><a href="#servicios">Servicios</a></li>
+      <li><a href="#visitanos">Horario y ubicación</a></li>
+      <li><a href="#contacto">Contacto</a></li>
+    </ul>
+    <a class="btn sm" href="https://wa.me/51941055118?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Brackets%20Per%C3%BA%20Oficial%20%E2%80%93%20Santiago%20de%20Surco%20y%20quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener">Escribir por WhatsApp</a>
+  </div>
+</header>
+
+<main id="top">
+  <div class="hero">
+    <div class="wrap">
+      <div class="reveal">
+        <span class="eyebrow">Clínica dental · Ortodoncia · Santiago de Surco</span>
+        <h1>Brackets Perú Oficial – Santiago de Surco</h1>
+        <p class="lead">Información clara, horarios y ubicación en un solo lugar. Escríbenos y coordina tu visita.</p>
+        <div class="cta">
+          <a class="btn" href="https://wa.me/51941055118?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Brackets%20Per%C3%BA%20Oficial%20%E2%80%93%20Santiago%20de%20Surco%20y%20quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener" style="background:#25d366;box-shadow:0 10px 24px -8px rgba(37,211,102,.6)">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.8 11.8 0 0012 0C5.4 0 .1 5.3.1 11.9c0 2.1.5 4.1 1.6 5.9L0 24l6.3-1.6a11.9 11.9 0 005.7 1.5c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.4-8.5zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4a9.9 9.9 0 01-1.5-5.2C2.2 6.5 6.6 2.1 12 2.1c2.6 0 5.1 1 7 2.9a9.8 9.8 0 012.9 7c0 5.4-4.4 9.8-9.9 9.8zm5.4-7.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1l-.9 1.1c-.2.2-.3.2-.6.1a8 8 0 01-4-3.5c-.3-.5.3-.5.9-1.6.1-.2.1-.4 0-.5l-.9-2.1c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.5.7.6-.1 1.8-.7 2-1.5.3-.7.3-1.3.2-1.5-.1-.1-.3-.2-.6-.3z"/></svg>
+            Escribir por WhatsApp
+          </a>
+          <a class="btn ghost" href="#visitanos">Cómo llegar</a>
+        </div>
+        <span class="badge">4.9★ · 31 reseñas en Google</span>
+      </div>
+      <aside class="card-hero reveal">
+        <dl>
+          <div><dt>Horario</dt><dd>Lunes a sábado · 9 a. m. – 9 p. m. · Domingo cerrado (según Google Maps)</dd></div>
+          <div><dt>Dirección</dt><dd>Av. Santiago de Surco Mz. A, Santiago de Surco 15048</dd></div>
+          <div><dt>WhatsApp</dt><dd>941 055 118</dd></div>
+        </dl>
+      </aside>
+    </div>
+  </div>
+
+  <section id="servicios">
+    <div class="wrap">
+      <p class="kicker">Servicios</p>
+      <h2 class="reveal">Lo que puedes consultar</h2>
+      <p class="sub reveal">Para detalles, disponibilidad y precios, escríbenos por WhatsApp y te atendemos directamente.</p>
+      <div class="grid reveal"><article class="svc"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.4 4.9 5.4.8-3.9 3.8.9 5.4L12 14.3 7.2 16.9l.9-5.4L4.2 7.7l5.4-.8z"/></svg></span><h3>Brackets y ortodoncia</h3></article><article class="svc"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg></span><h3>Evaluación de ortodoncia</h3></article><article class="svc"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11a7 7 0 0114 0c0 4.8-7 11-7 11z"/><circle cx="12" cy="10" r="2.5"/></svg></span><h3>Consultas sobre tratamientos</h3></article><article class="svc"><span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12a9 9 0 11-3-6.7"/><path d="M21 4v5h-5"/></svg></span><h3>Citas por WhatsApp</h3></article></div>
+    </div>
+  </section>
+
+  <section style="padding-top:0">
+    <div class="wrap">
+      <p class="kicker">Cómo funciona</p>
+      <h2 class="reveal">Tres pasos, sin complicaciones</h2>
+      <div class="steps reveal" style="margin-top:28px">
+        <div class="step"><h3>Escríbenos</h3><p>Cuéntanos qué necesitas por WhatsApp o pregúntale al asistente de esta página.</p></div>
+        <div class="step"><h3>Te orientamos</h3><p>Resolvemos tus dudas sobre servicios, horarios y cómo llegar.</p></div>
+        <div class="step"><h3>Coordina tu visita</h3><p>Acuerda el día y la hora que mejor te quede.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="visitanos" style="padding-top:0">
+    <div class="wrap">
+      <p class="kicker">Horario y ubicación</p>
+      <h2 class="reveal">Visítanos en Santiago de Surco</h2>
+      <p class="sub reveal">Revisa el horario y cómo llegar antes de salir.</p>
+      <div class="info reveal">
+        <div class="panel">
+          <h3>Horario</h3><p>Lunes a sábado · 9 a. m. – 9 p. m. · Domingo cerrado (según Google Maps)</p>
+          <h3>Dirección</h3><p>Av. Santiago de Surco Mz. A, Santiago de Surco 15048</p>
+          <a class="btn sm" href="https://www.google.com/maps/search/?api=1&amp;query=Brackets%20Per%C3%BA%20Oficial%20-%20Santiago%20de%20Surco" target="_blank" rel="noopener">Abrir en Google Maps</a>
+        </div>
+        <div class="map"><iframe title="Mapa de Brackets Perú Oficial – Santiago de Surco" src="https://www.google.com/maps?q=Brackets%20Per%C3%BA%20Oficial%20-%20Santiago%20de%20Surco&amp;output=embed" loading="lazy" referrerpolicy="no-referrer-when-downgrade" allowfullscreen></iframe></div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contacto" style="padding-top:0">
+    <div class="wrap">
+      <div class="band reveal">
+        <h2>¿Listo para escribirnos?</h2>
+        <p>Cuéntanos qué necesitas y te respondemos por WhatsApp.</p>
+        <a class="btn" href="https://wa.me/51941055118?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Brackets%20Per%C3%BA%20Oficial%20%E2%80%93%20Santiago%20de%20Surco%20y%20quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener">Abrir WhatsApp</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div>Brackets Perú Oficial – Santiago de Surco · Clínica dental · Ortodoncia · Santiago de Surco</div>
+    <div>Demo no oficial, preparada con datos públicos de Google Maps por José Larosa (desarrollador en Lima). No es el sitio oficial del negocio.</div>
+  </div>
+</footer>
+
+<a class="fab" href="https://wa.me/51941055118?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Brackets%20Per%C3%BA%20Oficial%20%E2%80%93%20Santiago%20de%20Surco%20y%20quisiera%20hacer%20una%20consulta." target="_blank" rel="noopener" aria-label="Escribir por WhatsApp">
+  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11.8 11.8 0 0012 0C5.4 0 .1 5.3.1 11.9c0 2.1.5 4.1 1.6 5.9L0 24l6.3-1.6a11.9 11.9 0 005.7 1.5c6.6 0 11.9-5.3 11.9-11.9 0-3.2-1.2-6.2-3.4-8.5zM12 21.8c-1.8 0-3.5-.5-5-1.4l-.4-.2-3.7 1 1-3.6-.2-.4a9.9 9.9 0 01-1.5-5.2C2.2 6.5 6.6 2.1 12 2.1c2.6 0 5.1 1 7 2.9a9.8 9.8 0 012.9 7c0 5.4-4.4 9.8-9.9 9.8zm5.4-7.4c-.3-.1-1.8-.9-2-1-.3-.1-.5-.1-.7.1l-.9 1.1c-.2.2-.3.2-.6.1a8 8 0 01-4-3.5c-.3-.5.3-.5.9-1.6.1-.2.1-.4 0-.5l-.9-2.1c-.2-.6-.5-.5-.7-.5h-.6c-.2 0-.5.1-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.1.2 2.1 3.2 5.1 4.5 1.9.8 2.6.9 3.5.7.6-.1 1.8-.7 2-1.5.3-.7.3-1.3.2-1.5-.1-.1-.3-.2-.6-.3z"/></svg>
+</a>
+
+<button class="chat-toggle" id="chatToggle" aria-expanded="false" aria-controls="chat"><span class="dot"></span><span class="t">Pregúntale al asistente</span></button>
+
+<div class="chat" id="chat" role="dialog" aria-label="Asistente de demostración">
+  <div class="chat-head"><i>B</i><div><b>Asistente de Brackets Perú Oficial – Santiago de Surco</b><small>Demostración · respuestas automáticas</small></div><button class="chat-x" id="chatClose" aria-label="Cerrar">×</button></div>
+  <div class="chat-body" id="chatBody" aria-live="polite"></div>
+  <div class="chips" id="chips"></div>
+  <form class="chat-form" id="chatForm" autocomplete="off">
+    <input id="chatInput" type="text" placeholder="Escribe tu pregunta…" aria-label="Escribe tu pregunta">
+    <button type="submit">Enviar</button>
+  </form>
+  <div class="note">Asistente de demostración: responde con la información de esta página.</div>
+</div>
+
+<script>
+const D = {"nombre": "Brackets Perú Oficial – Santiago de Surco", "rubro": "Clínica dental · Ortodoncia", "distrito": "Santiago de Surco", "direccion": "Av. Santiago de Surco Mz. A, Santiago de Surco 15048", "horario": "Lunes a sábado · 9 a. m. – 9 p. m. · Domingo cerrado (según Google Maps)", "servicios": ["Brackets y ortodoncia", "Evaluación de ortodoncia", "Consultas sobre tratamientos", "Citas por WhatsApp"], "rating": "4.9★ · 31 reseñas en Google", "wa": "https://wa.me/51941055118?text=Hola%2C%20vi%20la%20p%C3%A1gina%20de%20Brackets%20Per%C3%BA%20Oficial%20%E2%80%93%20Santiago%20de%20Surco%20y%20quisiera%20hacer%20una%20consulta.", "maps": "https://www.google.com/maps/search/?api=1&query=Brackets%20Per%C3%BA%20Oficial%20-%20Santiago%20de%20Surco"};
+const body = document.getElementById('chatBody');
+const chat = document.getElementById('chat');
+const toggle = document.getElementById('chatToggle');
+const input = document.getElementById('chatInput');
+const esc = s => String(s).replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const norm = s => s.toLowerCase().normalize('NFD').replace(/[̀-ͯ]/g, '');
+const wa = (t) => '<a href="' + esc(D.wa) + '" target="_blank" rel="noopener">' + t + '</a>';
+
+const FAQ = [
+  { k: 'Precios', re: /(precio|cuesta|costo|cuanto|tarifa|pagar|cuota|presupuesto|valor)/,
+    a: () => 'Los precios dependen de cada caso. Consúltanos por WhatsApp y te respondemos: ' + wa('abrir WhatsApp') + '.' },
+  { k: 'Horario', re: /(horario|hora |horas|abren|abierto|atienden|cierran|cuando|dias|domingo|sabado|feriado)/,
+    a: () => 'Nuestro horario: ' + esc(D.horario) },
+  { k: 'Ubicación', re: /(ubicacion|direccion|donde|llegar|mapa|queda|distrito|referencia)/,
+    a: () => esc(D.direccion) + ' (' + esc(D.distrito) + '). ' + '<a href="' + esc(D.maps) + '" target="_blank" rel="noopener">Ver en Google Maps</a>' },
+  { k: 'Servicios', re: /(servicio|ofrecen|hacen|tratamiento|que ofrecen|atienden a|especialidad|clases|curso|ciclo)/,
+    a: () => 'Puedes consultar por: ' + D.servicios.map(esc).join(', ') + '. Para detalles escríbenos por ' + wa('WhatsApp') + '.' },
+  { k: 'Reseñas', re: /(resena|opinion|calificacion|estrella|rating|recomiendan|valoracion)/,
+    a: () => D.rating ? ('En Google Maps: ' + esc(D.rating) + '.') : 'Puedes ver las reseñas en Google Maps.' },
+  { k: 'Contacto', re: /(cita|reserv|agendar|turno|matricula|contacto|whatsapp|telefono|numero|llamar|hablar|escribir)/,
+    a: () => 'Para coordinar, escríbenos por ' + wa('WhatsApp') + '.' },
+];
+
+function add(text, who, html) {
+  const m = document.createElement('div');
+  m.className = 'msg ' + who;
+  if (html) m.innerHTML = text; else m.textContent = text;
+  body.appendChild(m);
+  body.scrollTop = body.scrollHeight;
+}
+function answer(q) {
+  const n = norm(q) + ' ';
+  const hit = FAQ.find(f => f.re.test(n));
+  return hit ? hit.a() : 'No tengo esa información en esta demostración. Escríbenos por ' + wa('WhatsApp') + ' y te ayudamos.';
+}
+function ask(q) {
+  add(q, 'me');
+  setTimeout(() => add(answer(q), 'bot', true), 350);
+}
+FAQ.forEach(f => {
+  const b = document.createElement('button');
+  b.type = 'button'; b.className = 'chip'; b.textContent = f.k;
+  b.addEventListener('click', () => ask(f.k === 'Contacto' ? 'Quiero agendar o contactarlos' : f.k));
+  document.getElementById('chips').appendChild(b);
+});
+add('Hola, soy el asistente de demostración de ' + D.nombre + '. Puedo contarte sobre precios, horario, ubicación y servicios.', 'bot');
+document.getElementById('chatForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const v = input.value.trim();
+  if (!v) return;
+  input.value = '';
+  ask(v);
+});
+function setOpen(o) {
+  chat.classList.toggle('open', o);
+  toggle.setAttribute('aria-expanded', o);
+  if (o) input.focus();
+}
+toggle.addEventListener('click', () => setOpen(!chat.classList.contains('open')));
+document.getElementById('chatClose').addEventListener('click', () => setOpen(false));
+document.addEventListener('keydown', e => { if (e.key === 'Escape') setOpen(false); });
+
+const io = 'IntersectionObserver' in window ? new IntersectionObserver(es => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .12 }) : null;
+document.querySelectorAll('.reveal').forEach(el => io ? io.observe(el) : el.classList.add('in'));
+</script>
+</body>
+</html>
